@@ -35,13 +35,15 @@ class _SplashViewOneState extends State<SplashViewOne> {
             // 1️⃣ Logo animation
             Image.asset(AppAssets.splashLogo, height: 62.h, width: 62.w)
                 .animate()
-                .fadeIn(duration: 800.ms, curve: Curves.easeIn)
+                .fadeIn(duration: 1000.ms, curve: Curves.easeInOut)
                 .scale(
                   begin: const Offset(0.6, 0.6),
                   end: const Offset(1.0, 1.0),
-                  duration: 700.ms,
+                  duration: 900.ms,
                   curve: Curves.easeOutBack,
-                ),
+                )
+                .then(delay: 400.ms)
+                .shake(duration: 800.ms, hz: 2, curve: Curves.easeInOut),
             // 2️⃣ App name animation (after logo)
             Text(
                   "RezoRent",
