@@ -34,7 +34,7 @@ class AppCustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? 55.h,
+      height: height ?? 40.h,
       width: width ?? double.infinity,
       child: ElevatedButton(
         onPressed: () {
@@ -59,7 +59,7 @@ class AppCustomButton extends StatelessWidget {
             Text(
               title,
               key: textKey,
-              style: textStyle ?? AppTextStyles.customText16(color: AppColors.black, fontWeight: FontWeight.w500),
+              style: textStyle ?? AppTextStyles.customText14(color: AppColors.black, fontWeight: FontWeight.w600),
             ),
           ],
         ),

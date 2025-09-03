@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
 import '../config/app_colors.dart';
 import '../config/app_text_style.dart';
 
@@ -132,13 +133,13 @@ class AppCustomField extends StatelessWidget {
             children: [
               Text(
                 labelTitle ?? '',
-                style: AppTextStyles.customText(fontSize: labelTitleSize ?? 16, color: labelColor ?? AppColors.textLightBlack),
+                style: AppTextStyles.customText(fontSize: labelTitleSize ?? 14, color: labelColor ?? Color(0xff515151)),
               ),
               if (isRequired) Text(' *', style: AppTextStyles.customText16(color: AppColors.primary)),
             ],
           ),
         // if (titleWidget != null) titleWidget!,
-        // 4.h.height,
+        4.h.height,
         TextFormField(
           maxLength: maxLength,
           cursorColor: cursorColor ?? AppColors.primary,
@@ -152,7 +153,7 @@ class AppCustomField extends StatelessWidget {
             }
             return null;
           },
-          style: AppTextStyles.customText(fontSize: textSize ?? 16, color: textColor ?? Theme.of(context).textTheme.displayMedium?.color),
+          style: AppTextStyles.customText(fontSize: textSize ?? 16, color: textColor ?? AppColors.black),
           initialValue: initialValue,
           textAlign: fieldsTextAlign ?? TextAlign.start,
           maxLines: maxLines ?? 1,
@@ -176,25 +177,30 @@ class AppCustomField extends StatelessWidget {
             counterStyle: AppTextStyles.customText12(color: counterColor ?? AppColors.black),
             hintText: hintText,
             hintStyle: AppTextStyles.customText(
-              fontSize: hintTextFontSize ?? 14.sp,
+              fontSize: hintTextFontSize ?? 14,
               fontWeight: hintFontWeight ?? FontWeight.w400,
-              color: hintColor ?? Theme.of(context).textTheme.displayMedium?.color?.withOpacity(0.6),
+              color: hintColor ?? Color(0xff515151),
             ),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             floatingLabelStyle: const TextStyle(color: Colors.grey),
             floatingLabelBehavior: FloatingLabelBehavior.auto,
             filled: filled ?? true,
-            fillColor: fillColor ?? AppColors.transparent,
-            border: UnderlineInputBorder(borderSide: BorderSide(color: enabledBorderColor ?? AppColors.textLightBlack.withOpacity(0.4))),
+            fillColor: fillColor ?? Color(0xffF4F4F4),
+            border: OutlineInputBorder(borderSide: BorderSide(color: enabledBorderColor ?? AppColors.transparent), borderRadius: BorderRadius.circular(16.sp)),
             prefixIconColor: prefixIconColor,
             suffixIconColor: suffixIconColor,
-            contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 0.w, vertical: 15.h),
-            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: focusedBorderColor ?? AppColors.primary)),
-            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: enabledBorderColor ?? AppColors.textLightBlack.withOpacity(0.4))),
-            errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: errorBorderColor ?? AppColors.negativeRed)),
-            disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: disabledBorderColor ?? AppColors.textLightBlack.withOpacity(0.4))),
-            focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: focusedBorderColor ?? AppColors.primary)),
+            contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: enabledBorderColor ?? AppColors.primary), borderRadius: BorderRadius.circular(16.sp)),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: enabledBorderColor ?? AppColors.transparent), borderRadius: BorderRadius.circular(16.sp)),
+            errorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: enabledBorderColor ?? AppColors.negativeRed), borderRadius: BorderRadius.circular(16.sp)),
+            disabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: enabledBorderColor ?? AppColors.transparent), borderRadius: BorderRadius.circular(16.sp)),
+            focusedErrorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: enabledBorderColor ?? AppColors.primary), borderRadius: BorderRadius.circular(16.sp)),
             errorMaxLines: 2,
             errorStyle: TextStyle(color: Colors.red, fontSize: 12.sp),
           ),
