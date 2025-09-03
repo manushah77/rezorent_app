@@ -68,6 +68,7 @@ abstract class AppTextStyles {
     double letterSpacing = 0,
     TextDecoration decoration = TextDecoration.none,
     Color? decorationColor,
+    double? height,
     String? fontFamily, // added
   }) {
     return GoogleFonts.urbanist(
@@ -76,6 +77,7 @@ abstract class AppTextStyles {
       color: color,
       letterSpacing: letterSpacing,
       decoration: decoration,
+      height: height,
       decorationColor: decorationColor,
     );
   }
@@ -91,6 +93,26 @@ abstract class AppTextStyles {
   }) {
     return GoogleFonts.urbanist(
       fontSize: 32,
+      fontWeight: fontWeight,
+      color: color,
+      letterSpacing: letterSpacing,
+      decoration: decoration,
+      height: height,
+      shadows: shadow,
+    );
+  }
+
+  static TextStyle customText36({
+    List<Shadow>? shadow,
+    Color? color,
+    FontWeight fontWeight = FontWeight.normal,
+    double letterSpacing = 0,
+    TextDecoration decoration = TextDecoration.none,
+    double? height,
+    String? fontFamily, // added
+  }) {
+    return GoogleFonts.urbanist(
+      fontSize: 36,
       fontWeight: fontWeight,
       color: color,
       letterSpacing: letterSpacing,

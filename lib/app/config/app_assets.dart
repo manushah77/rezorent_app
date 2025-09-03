@@ -10,9 +10,11 @@ class AppAssets {
   // Images Path
   static const String splashLogo = '$imagesPath/splash_logo.png';
   static const String appNameIcon = '$imagesPath/app_name_icon.png';
+  static const String bgGetStarted = '$imagesPath/bg_get_started.png';
 
   // Svgs Path
   static const String backButton = '$svgsPath/back_btn.svg';
   static const String greyBackButton = '$svgsPath/grey_back_button.svg';
+  static const String startedIcon = '$svgsPath/started_icon.svg';
 
 }
