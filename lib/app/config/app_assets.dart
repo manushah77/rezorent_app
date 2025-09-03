@@ -14,5 +14,7 @@ class AppAssets {
   // Svgs Path
   static const String backButton = '$svgsPath/back_btn.svg';
   static const String greyBackButton = '$svgsPath/grey_back_button.svg';
+  static const String emailFieldIcon = '$svgsPath/email_field_icon.svg';
+  static const String passwordFieldIcon = '$svgsPath/password_field_icon.svg';
 
 }

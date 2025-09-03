@@ -190,7 +190,7 @@ class AppCustomField extends StatelessWidget {
             border: OutlineInputBorder(borderSide: BorderSide(color: enabledBorderColor ?? AppColors.transparent), borderRadius: BorderRadius.circular(16.sp)),
             prefixIconColor: prefixIconColor,
             suffixIconColor: suffixIconColor,
-            contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+            contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: enabledBorderColor ?? AppColors.primary), borderRadius: BorderRadius.circular(16.sp)),
             enabledBorder: OutlineInputBorder(
