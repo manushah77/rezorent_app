@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/login_controller.dart';
+import 'package:rezorent_app/app/mvvm/views/login_view/login_view.dart';
 import 'package:rezorent_app/app/mvvm/views/splash_views/splash_view_two.dart';
 
 import '../mvvm/views/get_started_view/get_started_vew.dart';
@@ -11,6 +13,7 @@ abstract class AppRoutes {
   static const splashOneView = '/splashOneView';
   static const splashTwoView = '/splashTwoView';
   static const getStartedView = '/getStartedView';
+  static const loginView = '/loginView';
 
 }
 
@@ -37,6 +40,13 @@ abstract class AppPages {
       page: () => GetStartedVew(),
       binding: BindingsBuilder(() {
         // Get.lazyPut<SplashController>(() => SplashController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.loginView,
+      page: () => LoginView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<LoginController>(() => LoginController());
       }),
     ),
   ];
