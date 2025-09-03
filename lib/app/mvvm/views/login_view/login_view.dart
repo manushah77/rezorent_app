@@ -51,75 +51,84 @@ class _LoginViewState extends State<LoginView> {
               60.h.height,
             ],
           ),
-          Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Positioned(
-                right: 10.w,
-                left: 10.w,
-                top: -10.h,
-                child: Container(
-                  height: 100.h,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.sp), color: Colors.white.withOpacity(0.5)),
+
+          // 🌟 Expanded Containers Section
+          Expanded(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                // 🔹 Blurred/White transparent container expanding fully
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(25.sp), topRight: Radius.circular(25.sp)),
+                      color: Colors.white.withOpacity(0.5),
+                    ),
+                  ).paddingHorizontal(10.w).animate().fadeIn(duration: 800.ms).slideY(begin: 1, end: 0),
                 ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(20.sp), topLeft: Radius.circular(20.sp)),
-                  color: Colors.white,
-                ),
-                child: SafeArea(
-                  child: SingleChildScrollView(
-                    physics: BouncingScrollPhysics(),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Welcome Back!',
-                          style: AppTextStyles.customText24(color: AppColors.textDarkColor, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'Log in to book your next ride or hotel stay in just a few clicks',
-                          style: AppTextStyles.customText12(color: AppColors.textDarkColor),
-                        ),
-                        20.h.height,
-                        AppCustomField(
-                          labelTitle: 'Email Address',
-                          hintText: 'Enter Email',
-                          prefixIcon: SvgPicture.asset(AppAssets.emailFieldIcon).paddingFromAll(10.sp),
-                        ),
-                        10.h.height,
-                        AppCustomField(
-                          labelTitle: 'Password',
-                          hintText: 'Enter Password',
-                          prefixIcon: SvgPicture.asset(AppAssets.passwordFieldIcon).paddingFromAll(10.sp),
-                        ),
-                        10.h.height,
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Text(
-                            'Forgot Password?',
-                            style: AppTextStyles.customText14(color: Color(0xff515151), fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        30.h.height,
-                        AppCustomButton(title: 'Log in', onPressed: () {}).paddingHorizontal(15.w),
-                        15.h.height,
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+
+                // 🔹 Main White container (Login Form)
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(topRight: Radius.circular(25.sp), topLeft: Radius.circular(25.sp)),
+                      color: Colors.white,
+                    ),
+                    child: SafeArea(
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
                           children: [
-                            Text("Don't have an account? ", style: AppTextStyles.customText14(color: AppColors.textDarkColor)),
                             Text(
-                              "Register",
-                              style: AppTextStyles.customText16(color: Color(0xff239EFE), fontWeight: FontWeight.w600),
+                              'Welcome Back!',
+                              style: AppTextStyles.customText24(color: AppColors.textDarkColor, fontWeight: FontWeight.bold),
                             ),
+                            Text(
+                              'Log in to book your next ride or hotel stay in just a few clicks',
+                              style: AppTextStyles.customText12(color: AppColors.textDarkColor),
+                            ),
+                            20.h.height,
+                            AppCustomField(
+                              labelTitle: 'Email Address',
+                              hintText: 'Enter Email',
+                              prefixIcon: SvgPicture.asset(AppAssets.emailFieldIcon).paddingFromAll(10.sp),
+                            ),
+                            10.h.height,
+                            AppCustomField(
+                              labelTitle: 'Password',
+                              hintText: 'Enter Password',
+                              prefixIcon: SvgPicture.asset(AppAssets.passwordFieldIcon).paddingFromAll(10.sp),
+                            ),
+                            10.h.height,
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                'Forgot Password?',
+                                style: AppTextStyles.customText14(color: const Color(0xff515151), fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                            70.h.height,
+                            AppCustomButton(title: 'Log in', onPressed: () {}).paddingHorizontal(15.w),
+                            15.h.height,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Don't have an account? ", style: AppTextStyles.customText14(color: AppColors.textDarkColor)),
+                                Text(
+                                  "Register",
+                                  style: AppTextStyles.customText16(color: const Color(0xff239EFE), fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
+                            30.h.height,
                           ],
-                        ),
-                      ],
-                    ).paddingFromAll(12.sp),
-                  ),
+                        ).paddingFromAll(15.sp),
+                      ),
+                    ),
+                  ).paddingTop(10.h).animate().fadeIn(duration: 1000.ms).slideY(begin: 1, end: 0),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

@@ -42,12 +42,7 @@ class _SplashViewState extends State<SplashView> {
             // 🌟 Tagline Animation
             Text(
                   AppStrings.tagLineText,
-                  style: AppTextStyles.customText14(color: const Color(0xB2FFFFFF), fontWeight: FontWeight.w500),
-                  style: AppTextStyles.customText14(
-                    color: const Color(0xB2FFFFFF),
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 7,
-                  ),
+                  style: AppTextStyles.customText14(color: const Color(0xB2FFFFFF), fontWeight: FontWeight.w500, letterSpacing: 7),
                 )
                 .animate(delay: 1600.ms) // after logo animation
                 .fadeIn(duration: 1000.ms)

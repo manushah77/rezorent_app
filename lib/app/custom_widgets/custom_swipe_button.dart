@@ -19,18 +19,18 @@ class CustomSwipeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: double.infinity,
       height: 60.h,
       child: SwipeButton(
         thumb: Container(
-            margin: EdgeInsets.all(5.sp) ,
+          margin: EdgeInsets.all(5.sp),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.r), color: AppColors.primary),
+          child: Container(
+            height: 45.h,
+            width: 45.w,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.r), color: AppColors.primary),
-
-            child: Container(
-              height: 45.h,
-              width: 45.w,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.r), color: AppColors.primary),
-              child: Center(child: SvgPicture.asset(AppAssets.startedIcon)),
-            )
+            child: Center(child: SvgPicture.asset(AppAssets.startedIcon)),
+          ),
         ),
         onSwipeEnd: onConfirm,
         activeThumbColor: AppColors.white,
@@ -44,10 +44,13 @@ class CustomSwipeButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             24.w.width,
-            Text(title, style: AppTextStyles.customText16(color: AppColors.black)),
+            Text(
+              title,
+              style: AppTextStyles.customText16(color: AppColors.black, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),
-    ).paddingHorizontal(0.2.sw);
+    );
   }
 }
