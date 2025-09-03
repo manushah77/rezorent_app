@@ -8,18 +8,18 @@ import '../../../config/app_routes.dart';
 import '../../../config/app_strings.dart';
 import '../../../config/app_text_style.dart';
 
-class SplashViewTwo extends StatefulWidget {
-  const SplashViewTwo({super.key});
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  State<SplashViewTwo> createState() => _SplashViewTwoState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewTwoState extends State<SplashViewTwo> {
+class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 4), () {
-      Get.offNamed(AppRoutes.loginView);
+      Get.offNamed(AppRoutes.getStartedView);
     });
     super.initState();
   }
@@ -43,6 +43,11 @@ class _SplashViewTwoState extends State<SplashViewTwo> {
             Text(
                   AppStrings.tagLineText,
                   style: AppTextStyles.customText14(color: const Color(0xB2FFFFFF), fontWeight: FontWeight.w500),
+                  style: AppTextStyles.customText14(
+                    color: const Color(0xB2FFFFFF),
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 7,
+                  ),
                 )
                 .animate(delay: 1600.ms) // after logo animation
                 .fadeIn(duration: 1000.ms)
