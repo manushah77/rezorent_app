@@ -27,9 +27,9 @@ class _RezoRentAppState extends State<RezoRentApp> {
             colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
             useMaterial3: true,
           ),
-          initialRoute: AppRoutes.splashView,
+          initialRoute: AppRoutes.splashOneView,
           getPages: AppPages.routes,
-          title: "PROXIX",
+          title: "REZO",
         );
       },
     );

@@ -24,7 +24,7 @@ class CustomBackButton extends StatelessWidget {
           onTap!();
         }
       },
-      child: SvgPicture.asset(isWhite ?? false ? AppAssets.whiteBackButton : AppAssets.greyBackButton, height: 40.sp, width: 40.sp),
+      child: SvgPicture.asset(isWhite ?? false ? AppAssets.backButton : AppAssets.greyBackButton, height: 40.sp, width: 40.sp),
     );
   }
 }
