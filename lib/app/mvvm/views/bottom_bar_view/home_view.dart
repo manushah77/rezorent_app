@@ -8,6 +8,8 @@ import 'package:rezorent_app/app/config/app_text_style.dart';
 import 'package:rezorent_app/app/config/padding_extensions.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_cache_image/custom_cached_image.dart';
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
+import 'package:rezorent_app/app/mvvm/views/home_tabs/cars_tab.dart';
+import 'package:rezorent_app/app/mvvm/views/home_tabs/hotels_tab.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -84,55 +86,54 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                 bottom: -25.h,
                 right: 10.w,
                 left: 10.w,
-                child:
-                    Container(
-                          height: 52.h,
-                          decoration: BoxDecoration(
-                            color: AppColors.scaffoldBgColor,
-                            border: Border.all(color: Colors.white, width: 4),
-                            borderRadius: BorderRadius.circular(33.sp),
-                          ),
-                          child: TabBar(
-                            physics: const NeverScrollableScrollPhysics(),
-                            padding: EdgeInsets.zero,
-                            isScrollable: false,
-                            tabs: tabs.map((tab) {
-                              int index = tabs.indexOf(tab);
-                              return AnimatedContainer(
-                                duration: const Duration(milliseconds: 300),
-                                // Smooth transition
-                                curve: Curves.easeInOut,
-                                // Smooth easing effect
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: AppColors.transparent,
-                                  border: Border.all(color: Colors.transparent),
-                                  borderRadius: BorderRadius.circular(33.sp),
-                                ),
-                                child: Tab(text: tab.text).paddingHorizontal(10.w),
-                              ).paddingHorizontal(5.w);
-                            }).toList(),
-                            controller: tabController,
-                            labelColor: AppColors.white,
-                            labelPadding: EdgeInsets.zero,
-                            enableFeedback: false,
-                            unselectedLabelStyle: AppTextStyles.customText14(color: AppColors.secondary, fontWeight: FontWeight.w500, height: 1.5),
-                            splashFactory: NoSplash.splashFactory,
-                            overlayColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
-                            indicatorSize: TabBarIndicatorSize.label,
-                            dividerColor: AppColors.transparent,
-                            unselectedLabelColor: AppColors.black,
-                            labelStyle: AppTextStyles.customText14(color: AppColors.white, fontWeight: FontWeight.w500, height: 1.5),
-                            indicator: BoxDecoration(borderRadius: BorderRadius.circular(33.sp), color: AppColors.primary),
-                            onTap: (index) {},
-                          ).paddingFromAll(5.sp),
-                        )
-                        .paddingHorizontal(20.w)
-                        .animate()
-                        .fadeIn(duration: 500.ms, delay: 400.ms)
-                        .slide(begin: Offset(0, -30.h), duration: 800.ms, curve: Curves.easeOutCubic),
+                child: Container(
+                  height: 52.h,
+                  decoration: BoxDecoration(
+                    color: AppColors.scaffoldBgColor,
+                    border: Border.all(color: Colors.white, width: 4),
+                    borderRadius: BorderRadius.circular(33.sp),
+                  ),
+                  child: TabBar(
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    isScrollable: false,
+                    tabs: tabs.map((tab) {
+                      int index = tabs.indexOf(tab);
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        // Smooth transition
+                        curve: Curves.easeInOut,
+                        // Smooth easing effect
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: AppColors.transparent,
+                          border: Border.all(color: Colors.transparent),
+                          borderRadius: BorderRadius.circular(33.sp),
+                        ),
+                        child: Tab(text: tab.text).paddingHorizontal(10.w),
+                      ).paddingHorizontal(5.w);
+                    }).toList(),
+                    controller: tabController,
+                    labelColor: AppColors.white,
+                    labelPadding: EdgeInsets.zero,
+                    enableFeedback: false,
+                    unselectedLabelStyle: AppTextStyles.customText14(color: AppColors.secondary, fontWeight: FontWeight.w500, height: 1.5),
+                    splashFactory: NoSplash.splashFactory,
+                    overlayColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
+                    indicatorSize: TabBarIndicatorSize.label,
+                    dividerColor: AppColors.transparent,
+                    unselectedLabelColor: AppColors.black,
+                    labelStyle: AppTextStyles.customText14(color: AppColors.white, fontWeight: FontWeight.w500, height: 1.5),
+                    indicator: BoxDecoration(borderRadius: BorderRadius.circular(33.sp), color: AppColors.primary),
+                    onTap: (index) {},
+                  ).paddingFromAll(5.sp),
+                ).paddingHorizontal(20.w),
               ),
             ],
+          ),
+          30.h.height,
+          Expanded(
+            child: TabBarView(controller: tabController, children: [HotelsTab(), CarsTab()]),
           ),
         ],
       ),

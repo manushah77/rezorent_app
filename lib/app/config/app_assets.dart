@@ -2,6 +2,7 @@
 class AppAssets {
   static const String svgsPath = 'assets/svgs';
   static const String imagesPath = 'assets/images';
+
   //static const String lottiesPath = 'assets/lotties';
 
   //Lotties Path
@@ -22,7 +23,6 @@ class AppAssets {
   static const String termsIcon = '$imagesPath/ic_terms_condition.png';
   static const String deleteAccountIcon = '$imagesPath/delete_account_icon.png';
 
-
   // Svgs Path
   static const String backButton = '$svgsPath/back_btn.svg';
   static const String whiteBackButton = '$svgsPath/white_back_button.svg';
@@ -41,5 +41,6 @@ class AppAssets {
   static const String closeIcon = '$svgsPath/close_icon.svg';
   static const String homeIndicatorIcon = '$svgsPath/home_indicator_icon.svg';
   static const String notificationIcon = '$svgsPath/notification_icon.svg';
-
+  static const String searchIcon = '$svgsPath/search_icon.svg';
+  static const String filterIcon = '$svgsPath/filter_icon.svg';
 }
