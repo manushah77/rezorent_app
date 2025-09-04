@@ -45,5 +45,7 @@ class AppAssets {
   static const String searchIcon = '$svgsPath/search_icon.svg';
   static const String filterIcon = '$svgsPath/filter_icon.svg';
   static const String icNotification = '$svgsPath/ic_notification.svg';
+  static const String fromDateIcon = '$svgsPath/from_date_icon.svg';
+  static const String toDateIcon = '$svgsPath/to_date_icon.svg';
 
 }
