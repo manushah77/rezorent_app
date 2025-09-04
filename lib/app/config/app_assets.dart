@@ -14,6 +14,14 @@ class AppAssets {
   static const String visibilityOff = '$imagesPath/visibility_off.png';
   static const String visibilityOn = '$imagesPath/visibility_on.png';
   static const String placeholderMan = '$imagesPath/placeholder_man.png';
+  static const String notificationIc = '$imagesPath/ic_notification.png';
+  static const String aboutUsIcon = '$imagesPath/is_about_us.png';
+  static const String privacyIcon = '$imagesPath/ic_privacy.png';
+  static const String signOutIcon = '$imagesPath/ic_sign_out.png';
+  static const String deleteIcon = '$imagesPath/ic_delete.png';
+  static const String termsIcon = '$imagesPath/ic_terms_condition.png';
+  static const String deleteAccountIcon = '$imagesPath/delete_account_icon.png';
+
 
   // Svgs Path
   static const String backButton = '$svgsPath/back_btn.svg';
@@ -28,5 +36,8 @@ class AppAssets {
   static const String bookingIcon = '$svgsPath/booking_icon.svg';
   static const String historyIcon = '$svgsPath/history_icon.svg';
   static const String profileIcon = '$svgsPath/profile_icon.svg';
+  static const String messageIcon = '$svgsPath/message_icon.svg';
+  static const String closeIcon = '$svgsPath/close_icon.svg';
+  static const String homeIndicatorIcon = '$svgsPath/home_indicator_icon.svg';
 
 }
