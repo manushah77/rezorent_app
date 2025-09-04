@@ -9,6 +9,7 @@ import 'package:rezorent_app/app/mvvm/views/delete_account_view/delete_account_v
 import 'package:rezorent_app/app/mvvm/views/edit_profile_view/edit_profile_view.dart';
 import 'package:rezorent_app/app/mvvm/views/forgot_pass_view/forgot_pass_view.dart';
 import 'package:rezorent_app/app/mvvm/views/login_view/login_view.dart';
+import 'package:rezorent_app/app/mvvm/views/notification_view/notification_view.dart';
 import 'package:rezorent_app/app/mvvm/views/sign_up_view/sign_up_view.dart';
 import 'package:rezorent_app/app/mvvm/views/splash_views/splash_view.dart';
 
@@ -32,6 +33,7 @@ abstract class AppRoutes {
   static const aboutUsView = '/aboutUsView';
   static const privacyPolicyView = '/privacyPolicyView';
   static const termsAndConditionView = '/termsAndConditionView';
+  static const notificationView = '/notificationView';
 }
 
 abstract class AppPages {
@@ -108,6 +110,14 @@ abstract class AppPages {
        // Get.lazyPut<SignUpController>(() => SignUpController());
       }),
     ),
+    GetPage(
+      name: AppRoutes.notificationView,
+      page: () => NotificationsView(),
+      binding: BindingsBuilder(() {
+        // Get.lazyPut<SignUpController>(() => SignUpController());
+      }),
+    ),
+
     GetPage(
       name: AppRoutes.bottomBarView,
       page: () => BottomBarView(),
