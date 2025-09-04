@@ -20,6 +20,7 @@ class _AboutUsViewState extends State<AboutUsView> {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBgColor,
       appBar: CustomAppBar(
+        toolBarHeight: 80.h,
         title: "About Us",
         backgroundColor: Colors.white,
       ),

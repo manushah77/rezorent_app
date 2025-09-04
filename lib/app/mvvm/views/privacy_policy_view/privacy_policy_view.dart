@@ -20,6 +20,7 @@ class _PrivacyPolicyViewState extends State<PrivacyPolicyView> {
     return Scaffold(
         backgroundColor: AppColors.scaffoldBgColor,
         appBar: CustomAppBar(
+          toolBarHeight: 80.h,
           title: "Privacy Policy",
           backgroundColor: Colors.white,
         ),

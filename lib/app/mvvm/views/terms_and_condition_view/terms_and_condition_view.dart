@@ -19,6 +19,7 @@ class _TermsAndConditionViewState extends State<TermsAndConditionView> {
     return Scaffold(
         backgroundColor: AppColors.scaffoldBgColor,
         appBar: CustomAppBar(
+          toolBarHeight: 80.h,
           title: "Terms & Conditions",
           backgroundColor: Colors.white,
         ),

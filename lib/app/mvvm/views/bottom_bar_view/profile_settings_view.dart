@@ -25,15 +25,13 @@ class ProfileSettingsView extends StatefulWidget {
 class _ProfileSettingsViewState extends State<ProfileSettingsView> {
   bool notificationEnabled = true;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBgColor,
       appBar: CustomAppBar(
-        title: "Profile Settings",
-        backgroundColor: Colors.white,
-      ),
+          toolBarHeight: 80.h,
+          title: "Profile Settings", backgroundColor: Colors.white),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -51,24 +49,14 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
                     decoration: BoxDecoration(
                       color: AppColors.white,
                       borderRadius: BorderRadius.circular(12.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
+                      boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.1), spreadRadius: 2, blurRadius: 5, offset: const Offset(0, 3))],
                     ),
                     child: Column(
                       children: [
                         40.h.height,
                         Text(
                           "Darrell Steward",
-                          style: AppTextStyles.customText16(
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.textColorDark,
-                          ),
+                          style: AppTextStyles.customText16(fontWeight: FontWeight.w500, color: AppColors.textColorDark),
                         ),
                         4.h.height,
                         Row(
@@ -78,10 +66,7 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
                             4.w.width,
                             Text(
                               "johnsonwilliams34@gmail.com",
-                              style: AppTextStyles.customText14(
-                                color: AppColors.textColorDark.withOpacity(0.5),
-                                fontWeight: FontWeight.w400,
-                              ),
+                              style: AppTextStyles.customText14(color: AppColors.textColorDark.withOpacity(0.5), fontWeight: FontWeight.w400),
                             ),
                           ],
                         ),
@@ -92,7 +77,7 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
                           onPressed: () {
                             Get.toNamed(AppRoutes.editProfileView);
                           },
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -118,14 +103,7 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
                 decoration: BoxDecoration(
                   color: AppColors.white,
                   borderRadius: BorderRadius.circular(12.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
+                  boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.1), spreadRadius: 2, blurRadius: 5, offset: const Offset(0, 3))],
                 ),
                 child: Column(
                   children: [
@@ -179,7 +157,7 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
                       title: "Terms & Conditions",
                       trailing: Icon(Icons.arrow_forward_ios, size: 16.sp),
                       onTap: () {
-                       Get.toNamed(AppRoutes.termsAndConditionView);
+                        Get.toNamed(AppRoutes.termsAndConditionView);
                       },
                     ),
                     Divider(height: 1, thickness: 1, color: AppColors.textLightBlack.withOpacity(0.1)).paddingHorizontal(14.w).paddingVertical(6.h),
@@ -189,7 +167,7 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
                       title: "Sign out",
                       trailing: SizedBox.shrink(),
                       onTap: () {
-                       Utils.showBottomSheet(context: context, child: LogoutSheet());
+                        Utils.showBottomSheet(context: context, child: LogoutSheet());
                       },
                     ),
                     Divider(height: 1, thickness: 1, color: AppColors.textLightBlack.withOpacity(0.1)).paddingHorizontal(14.w).paddingVertical(6.h),
@@ -200,13 +178,13 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
                       titleColor: Colors.red,
                       trailing: const SizedBox(),
                       onTap: () {
-                      Get.toNamed(AppRoutes.deleteAccountView);
+                        Get.toNamed(AppRoutes.deleteAccountView);
                       },
                     ),
                   ],
                 ),
               ),
-              16.h.height
+              16.h.height,
             ],
           ),
         ),
@@ -226,10 +204,7 @@ class _ProfileSettingsViewState extends State<ProfileSettingsView> {
       leading: leading,
       title: Text(
         title,
-        style: AppTextStyles.customText14(
-          color: titleColor,
-          fontWeight: FontWeight.w400,
-        ),
+        style: AppTextStyles.customText14(color: titleColor, fontWeight: FontWeight.w400),
       ),
       trailing: trailing,
       onTap: onTap,

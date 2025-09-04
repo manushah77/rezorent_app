@@ -29,6 +29,7 @@ class _DeleteAccountViewState extends State<DeleteAccountView> {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBgColor,
       appBar: CustomAppBar(
+        toolBarHeight: 80.h,
         title: "Delete Account",
         backgroundColor: Colors.white,
       ),
