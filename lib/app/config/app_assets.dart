@@ -22,6 +22,7 @@ class AppAssets {
   static const String deleteIcon = '$imagesPath/ic_delete.png';
   static const String termsIcon = '$imagesPath/ic_terms_condition.png';
   static const String deleteAccountIcon = '$imagesPath/delete_account_icon.png';
+  static const String icPaymentCanceled = '$imagesPath/payment_canceled.png';
 
   // Svgs Path
   static const String backButton = '$svgsPath/back_btn.svg';
@@ -43,4 +44,6 @@ class AppAssets {
   static const String notificationIcon = '$svgsPath/notification_icon.svg';
   static const String searchIcon = '$svgsPath/search_icon.svg';
   static const String filterIcon = '$svgsPath/filter_icon.svg';
+  static const String icNotification = '$svgsPath/ic_notification.svg';
+
 }
