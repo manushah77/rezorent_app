@@ -71,7 +71,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       surfaceTintColor: Colors.transparent,
       leadingWidth: leadingWidth ?? 70.w,
       elevation: elevation,
-
       shadowColor: shadowColor.withOpacity(0.3),
       centerTitle: centerTitle,
       leading:
@@ -85,7 +84,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     width: 40.sp, // responsive width
                     height: 40.sp, // same as width → circle
                     child: CustomBackButton(isWhite: isWhite ?? false),
-                  ).paddingLeft(15.w),
+                  ).paddingLeft(5.w),
             ),
           ),
       // flexibleSpace: shouldAddBG,

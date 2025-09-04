@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:rezorent_app/app/config/app_colors.dart';
+import 'package:rezorent_app/app/config/app_routes.dart';
 import 'package:rezorent_app/app/config/padding_extensions.dart';
 import 'package:rezorent_app/app/custom_widgets/app_custom_button.dart';
 import 'package:rezorent_app/app/custom_widgets/app_custom_field.dart';
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
+import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/login_controller.dart';
 
 import '../../../config/app_assets.dart';
 import '../../../config/app_text_style.dart';
@@ -19,6 +22,8 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final LoginController controller = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +37,7 @@ class _LoginViewState extends State<LoginView> {
               // 🌟 Main Logo Animation
               Align(
                 alignment: Alignment.center,
-                child: Image.asset(AppAssets.appNameIcon, height: 50.h)
+                child: Image.asset(AppAssets.splashLogo, height: 50.h)
                     .animate()
                     .fadeIn(duration: 1000.ms, curve: Curves.easeInOut)
                     .scale(begin: const Offset(0.6, 0.6), end: const Offset(1.0, 1.0), duration: 900.ms, curve: Curves.easeOutBack)
@@ -94,29 +99,49 @@ class _LoginViewState extends State<LoginView> {
                               prefixIcon: SvgPicture.asset(AppAssets.emailFieldIcon).paddingFromAll(10.sp),
                             ),
                             10.h.height,
-                            AppCustomField(
-                              labelTitle: 'Password',
-                              hintText: 'Enter Password',
-                              prefixIcon: SvgPicture.asset(AppAssets.passwordFieldIcon).paddingFromAll(10.sp),
-                            ),
+                            Obx(() {
+                              return AppCustomField(
+                                labelTitle: 'Password',
+                                hintText: 'Enter Password',
+                                prefixIcon: SvgPicture.asset(AppAssets.passwordFieldIcon).paddingFromAll(10.sp),
+                                obscureText: controller.obscureText.value,
+                                suffixIcon: GestureDetector(
+                                  onTap: () {
+                                    controller.obscureText.value = !controller.obscureText.value;
+                                  },
+                                  child: Image.asset(
+                                    controller.obscureText.value ? AppAssets.visibilityOff : AppAssets.visibilityOn,
+                                    height: 15.h,
+                                  ).paddingFromAll(12.sp),
+                                ),
+                              );
+                            }),
                             10.h.height,
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                'Forgot Password?',
-                                style: AppTextStyles.customText14(color: const Color(0xff515151), fontWeight: FontWeight.w500),
+                            GestureDetector(
+                              onTap: () => Get.toNamed(AppRoutes.forgotPassView),
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  'Forgot Password?',
+                                  style: AppTextStyles.customText14(color: const Color(0xff515151), fontWeight: FontWeight.w500),
+                                ),
                               ),
                             ),
                             70.h.height,
-                            AppCustomButton(title: 'Log in', onPressed: () {}).paddingHorizontal(15.w),
+                            AppCustomButton(title: 'Log in', onPressed: () {
+                              Get.offAllNamed(AppRoutes.bottomBarView);
+                            }).paddingHorizontal(15.w),
                             15.h.height,
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text("Don't have an account? ", style: AppTextStyles.customText14(color: AppColors.textDarkColor)),
-                                Text(
-                                  "Register",
-                                  style: AppTextStyles.customText16(color: const Color(0xff239EFE), fontWeight: FontWeight.w600),
+                                GestureDetector(
+                                  onTap: () => Get.toNamed(AppRoutes.signUpView),
+                                  child: Text(
+                                    "Register",
+                                    style: AppTextStyles.customText16(color: const Color(0xff239EFE), fontWeight: FontWeight.w600),
+                                  ),
                                 ),
                               ],
                             ),

@@ -33,7 +33,7 @@ class _SplashViewState extends State<SplashView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // 🌟 Main Logo Animation
-            Image.asset(AppAssets.appNameIcon, height: 60.h, width: 185.w)
+            Image.asset(AppAssets.splashLogo, height: 60.h, width: 185.w)
                 .animate()
                 .fadeIn(duration: 1000.ms, curve: Curves.easeInOut)
                 .scale(begin: const Offset(0.6, 0.6), end: const Offset(1.0, 1.0), duration: 900.ms, curve: Curves.easeOutBack)
