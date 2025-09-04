@@ -40,5 +40,6 @@ class AppAssets {
   static const String messageIcon = '$svgsPath/message_icon.svg';
   static const String closeIcon = '$svgsPath/close_icon.svg';
   static const String homeIndicatorIcon = '$svgsPath/home_indicator_icon.svg';
+  static const String notificationIcon = '$svgsPath/notification_icon.svg';
 
 }

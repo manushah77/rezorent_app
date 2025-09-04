@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/login_controller.dart';
 import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/sign_up_controller.dart';
 import 'package:rezorent_app/app/mvvm/view_model/bottom_bar_controller/bottom_bar_controller.dart';
+import 'package:rezorent_app/app/mvvm/view_model/home_controller/home_controller.dart';
 import 'package:rezorent_app/app/mvvm/views/bottom_bar_view/bottom_bar_view.dart';
 import 'package:rezorent_app/app/mvvm/views/delete_account_view/delete_account_view.dart';
 import 'package:rezorent_app/app/mvvm/views/edit_profile_view/edit_profile_view.dart';
@@ -112,6 +113,7 @@ abstract class AppPages {
       page: () => BottomBarView(),
       binding: BindingsBuilder(() {
         Get.lazyPut<BottomBarController>(() => BottomBarController());
+        Get.lazyPut<HomeController>(() => HomeController());
       }),
     ),
   ];
