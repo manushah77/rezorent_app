@@ -28,5 +28,6 @@ class AppAssets {
   static const String bookingIcon = '$svgsPath/booking_icon.svg';
   static const String historyIcon = '$svgsPath/history_icon.svg';
   static const String profileIcon = '$svgsPath/profile_icon.svg';
+  static const String locationIcon = '$svgsPath/location_icon.svg';
 
 }
