@@ -23,6 +23,7 @@ abstract class AppColors {
   static const Color transparent = Colors.transparent;
   static const Color textLightBlack = Color(0xff777E90);
   static const Color bgColor = Color(0xFFF0F1F6);
+  static const Color scaffoldColor = Color(0xFFF9F9F9);
   static const Color iconColor = Color(0xffF4F8FB);
   static const Color darkBgColor = Color(0xFF1B1C1E);
   static const Color borderColor = Color(0xFFE6E6E6);

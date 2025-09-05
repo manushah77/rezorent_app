@@ -13,7 +13,9 @@ import 'package:rezorent_app/app/mvvm/views/notification_view/notification_view.
 import 'package:rezorent_app/app/mvvm/views/sign_up_view/sign_up_view.dart';
 import 'package:rezorent_app/app/mvvm/views/splash_views/splash_view.dart';
 
+import '../mvvm/view_model/car_rental_details/car_rental_details_controller.dart';
 import '../mvvm/views/about_us_view/about_us_view.dart';
+import '../mvvm/views/car_rental_details/car_rental_details_view.dart';
 import '../mvvm/views/get_started_view/get_started_vew.dart';
 import '../mvvm/views/privacy_policy_view/privacy_policy_view.dart';
 import '../mvvm/views/terms_and_condition_view/terms_and_condition_view.dart';
@@ -34,6 +36,7 @@ abstract class AppRoutes {
   static const privacyPolicyView = '/privacyPolicyView';
   static const termsAndConditionView = '/termsAndConditionView';
   static const notificationView = '/notificationView';
+  static const carRentalDetailsView = '/carRentalDetailsView';
 }
 
 abstract class AppPages {
@@ -126,5 +129,16 @@ abstract class AppPages {
         Get.lazyPut<HomeController>(() => HomeController());
       }),
     ),
+
+    GetPage(
+      name: AppRoutes.carRentalDetailsView,
+      page: () => CarRentalDetailsView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+        // Get.lazyPut<HomeController>(() => HomeController());
+      }),
+    ),
+
+
   ];
 }

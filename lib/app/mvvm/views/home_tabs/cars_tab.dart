@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:get/get.dart';
+import 'package:rezorent_app/app/config/app_routes.dart';
 import 'package:rezorent_app/app/config/padding_extensions.dart';
 import 'package:rezorent_app/app/custom_widgets/app_custom_button.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_cache_image/custom_cached_image.dart';
@@ -94,6 +95,10 @@ class _CarsTabState extends State<CarsTab> {
                 logoUrl: "https://marketplace.canva.com/EAFyLnK08nw/1/0/1600w/canva-beige-black-simple-modern-car-rental-logo-yPiPBx-aXso.jpg",
                 buttonText: "Reserve Now",
                 onPressed: () {
+                  Get.toNamed(AppRoutes.carRentalDetailsView);
+                },
+
+                onReserveNow: () {
                   // Handle reserve logic
                 },
               );

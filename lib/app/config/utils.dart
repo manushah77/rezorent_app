@@ -74,6 +74,7 @@ class Utils {
       barrierDismissible: true, // Allows dismissing when tapping outside
       builder: (context) {
         return Dialog(
+          insetPadding: EdgeInsets.symmetric(horizontal: 15.w),
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(22.sp), // Rounded corners for the dialog
