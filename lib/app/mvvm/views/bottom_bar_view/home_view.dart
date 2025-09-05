@@ -140,5 +140,4 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       ),
     );
   }
-
 }
