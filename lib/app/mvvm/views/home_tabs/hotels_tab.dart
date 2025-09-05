@@ -14,7 +14,9 @@ import 'package:rezorent_app/app/custom_widgets/custom_sheets/hotel_filter_sheet
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
 import 'package:rezorent_app/app/mvvm/view_model/home_controller/home_controller.dart';
 
+import '../../../config/app_routes.dart';
 import '../../../config/app_text_style.dart';
+import '../../../custom_widgets/custom_cards/reserve_rental_card.dart';
 
 class HotelsTab extends StatefulWidget {
   const HotelsTab({super.key});
@@ -185,6 +187,29 @@ class _HotelsTabState extends State<HotelsTab> {
                 ],
               ),
             ],
+          ),
+          10.h.height,
+          ListView.builder(
+            padding: EdgeInsets.only(bottom: 120.h),
+            itemCount: 6,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return ReserveRentalCard(
+                isForHotel: true,
+                title: "Hyundai I30",
+                location: "Lagjia Partizani, Rruga Sheza.",
+                imageUrl: "https://cdn.cars24.com/prod/new-car-cms/Maruti-Suzuki/New-Dzire/2024/11/12/f2f7185b-e5a2-45a4-ba32-2b9a066feeee-Car-dynamic-shot-680x601-_1_.jpg",
+                logoUrl: "https://marketplace.canva.com/EAFyLnK08nw/1/0/1600w/canva-beige-black-simple-modern-car-rental-logo-yPiPBx-aXso.jpg",
+                buttonText: "Reserve Now",
+                onPressed: () {
+                  Get.toNamed(AppRoutes.hotelDetailsView);
+                },
+                onReserveNow: () {
+                  // Handle reserve logic
+                },
+              );
+            },
           ),
         ],
       ).paddingHorizontal(15.w),
