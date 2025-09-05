@@ -138,7 +138,7 @@ class AppCustomField extends StatelessWidget {
               if (isRequired) Text(' *', style: AppTextStyles.customText16(color: AppColors.primary)),
             ],
           ),
-        // if (titleWidget != null) titleWidget!,
+        if (titleWidget != null) titleWidget!,
         4.h.height,
         TextFormField(
           maxLength: maxLength,
