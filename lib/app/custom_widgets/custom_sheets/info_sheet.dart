@@ -49,13 +49,14 @@ class _InfoSheetState extends State<InfoSheet> {
 
             ],
           ),
-          5.h.height,
+          10.h.height,
           Text(
             AppStrings.infoText,
             textAlign: TextAlign.start,
             style: AppTextStyles.customText14(
               color: Color(0xFF1E1E1E).withOpacity(0.8),
               fontWeight: FontWeight.w400,
+              height: 1.35
             ),
           ),
 
