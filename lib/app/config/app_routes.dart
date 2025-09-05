@@ -8,6 +8,7 @@ import 'package:rezorent_app/app/mvvm/views/bottom_bar_view/bottom_bar_view.dart
 import 'package:rezorent_app/app/mvvm/views/delete_account_view/delete_account_view.dart';
 import 'package:rezorent_app/app/mvvm/views/edit_profile_view/edit_profile_view.dart';
 import 'package:rezorent_app/app/mvvm/views/forgot_pass_view/forgot_pass_view.dart';
+import 'package:rezorent_app/app/mvvm/views/hotel_details_view/hotel_details_view.dart';
 import 'package:rezorent_app/app/mvvm/views/login_view/login_view.dart';
 import 'package:rezorent_app/app/mvvm/views/notification_view/notification_view.dart';
 import 'package:rezorent_app/app/mvvm/views/sign_up_view/sign_up_view.dart';
@@ -37,6 +38,7 @@ abstract class AppRoutes {
   static const termsAndConditionView = '/termsAndConditionView';
   static const notificationView = '/notificationView';
   static const carRentalDetailsView = '/carRentalDetailsView';
+  static const hotelDetailsView = '/hotelDetailsView';
 }
 
 abstract class AppPages {
@@ -89,28 +91,28 @@ abstract class AppPages {
       name: AppRoutes.deleteAccountView,
       page: () => DeleteAccountView(),
       binding: BindingsBuilder(() {
-       // Get.lazyPut<SignUpController>(() => SignUpController());
+        // Get.lazyPut<SignUpController>(() => SignUpController());
       }),
     ),
     GetPage(
       name: AppRoutes.aboutUsView,
       page: () => AboutUsView(),
       binding: BindingsBuilder(() {
-      //  Get.lazyPut<SignUpController>(() => SignUpController());
+        //  Get.lazyPut<SignUpController>(() => SignUpController());
       }),
     ),
     GetPage(
       name: AppRoutes.privacyPolicyView,
       page: () => PrivacyPolicyView(),
       binding: BindingsBuilder(() {
-      //  Get.lazyPut<SignUpController>(() => SignUpController());
+        //  Get.lazyPut<SignUpController>(() => SignUpController());
       }),
     ),
     GetPage(
       name: AppRoutes.termsAndConditionView,
       page: () => TermsAndConditionView(),
       binding: BindingsBuilder(() {
-       // Get.lazyPut<SignUpController>(() => SignUpController());
+        // Get.lazyPut<SignUpController>(() => SignUpController());
       }),
     ),
     GetPage(
@@ -138,7 +140,12 @@ abstract class AppPages {
         // Get.lazyPut<HomeController>(() => HomeController());
       }),
     ),
-
-
+    GetPage(
+      name: AppRoutes.hotelDetailsView,
+      page: () => HotelDetailsView(),
+      binding: BindingsBuilder(() {
+        // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
   ];
 }

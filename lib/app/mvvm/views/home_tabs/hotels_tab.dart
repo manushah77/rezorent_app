@@ -14,6 +14,7 @@ import 'package:rezorent_app/app/custom_widgets/custom_sheets/hotel_filter_sheet
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
 import 'package:rezorent_app/app/mvvm/view_model/home_controller/home_controller.dart';
 
+import '../../../config/app_routes.dart';
 import '../../../config/app_text_style.dart';
 import '../../../custom_widgets/custom_cards/reserve_rental_card.dart';
 
@@ -202,7 +203,7 @@ class _HotelsTabState extends State<HotelsTab> {
                 logoUrl: "https://marketplace.canva.com/EAFyLnK08nw/1/0/1600w/canva-beige-black-simple-modern-car-rental-logo-yPiPBx-aXso.jpg",
                 buttonText: "Reserve Now",
                 onPressed: () {
-                  // Get.toNamed(AppRoutes.carRentalDetailsView);
+                  Get.toNamed(AppRoutes.hotelDetailsView);
                 },
                 onReserveNow: () {
                   // Handle reserve logic

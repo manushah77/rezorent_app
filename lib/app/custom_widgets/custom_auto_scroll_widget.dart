@@ -24,14 +24,9 @@ class CarCarouselWidget extends StatefulWidget {
   final String carName;
   final String location;
   final String pricePerNight;
+  final double? borderRadius;
 
-  const CarCarouselWidget({
-    super.key,
-    required this.carImages,
-    required this.carName,
-    required this.location,
-    required this.pricePerNight,
-  });
+  const CarCarouselWidget({super.key, required this.carImages, required this.carName, required this.location, required this.pricePerNight, this.borderRadius});
 
   @override
   State<CarCarouselWidget> createState() => _CarCarouselWidgetState();
@@ -62,11 +57,7 @@ class _CarCarouselWidgetState extends State<CarCarouselWidget> {
         if (nextPage >= widget.carImages.length) {
           nextPage = 0;
         }
-        _pageController.animateToPage(
-          nextPage,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.easeInOut,
-        );
+        _pageController.animateToPage(nextPage, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
       }
     });
   }
@@ -82,16 +73,16 @@ class _CarCarouselWidgetState extends State<CarCarouselWidget> {
 
     return GestureDetector(
       onTap: () {
-        Utils.showCustomDialog(context: context, child: ImagesDetailsDialog(imageUrls: widget.carImages, initialIndex: 0));
+        Utils.showCustomDialog(
+          context: context,
+          child: ImagesDetailsDialog(imageUrls: widget.carImages, initialIndex: 0),
+        );
       },
       child: Container(
         height: 0.4.sh,
         width: 1.sw,
         clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-          color: AppColors.borderColor,
-          borderRadius: BorderRadius.circular(10.sp),
-        ),
+        decoration: BoxDecoration(color: AppColors.borderColor, borderRadius: BorderRadius.circular(widget.borderRadius ?? 10.sp)),
         child: Stack(
           children: [
             SizedBox(
@@ -106,12 +97,7 @@ class _CarCarouselWidgetState extends State<CarCarouselWidget> {
                   _startAutoScroll();
                 },
                 itemBuilder: (context, index) {
-                  return CustomCachedImage(
-                    height: 0.4.sh,
-                    width: 1.sw,
-                    imageUrl: widget.carImages[index],
-                    borderRadius: 10.sp,
-                  );
+                  return CustomCachedImage(height: 0.4.sh, width: 1.sw, imageUrl: widget.carImages[index], borderRadius: widget.borderRadius ?? 10.sp);
                 },
               ),
             ),
@@ -123,11 +109,7 @@ class _CarCarouselWidgetState extends State<CarCarouselWidget> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [
-                      AppColors.transparent,
-                      AppColors.transparent,
-                      AppColors.black.withOpacity(0.7),
-                    ],
+                    colors: [AppColors.transparent, AppColors.transparent, AppColors.black.withOpacity(0.7)],
                   ),
                 ),
               ),
@@ -151,11 +133,7 @@ class _CarCarouselWidgetState extends State<CarCarouselWidget> {
                     child: Center(
                       child: Text(
                         widget.pricePerNight,
-                        style: AppTextStyles.customText(
-                          fontSize: 12.sp,
-                          color: AppColors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: AppTextStyles.customText(fontSize: 12.sp, color: AppColors.white, fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
@@ -173,31 +151,18 @@ class _CarCarouselWidgetState extends State<CarCarouselWidget> {
                   children: [
                     Text(
                       widget.carName,
-                      style: AppTextStyles.customText(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20.sp,
-                      ),
+                      style: AppTextStyles.customText(color: AppColors.white, fontWeight: FontWeight.w700, fontSize: 20.sp),
                     ),
                     Row(
                       children: [
-                        SvgPicture.asset(
-                          AppAssets.locationIcon,
-                          color: AppColors.white.withOpacity(0.6),
-                          height: 20.sp,
-                          width: 20.sp,
-                        ),
+                        SvgPicture.asset(AppAssets.locationIcon, color: AppColors.white.withOpacity(0.6), height: 20.sp, width: 20.sp),
                         SizedBox(width: 9.w),
                         Expanded(
                           child: Text(
                             widget.location,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: AppTextStyles.customText(
-                              color: AppColors.white.withOpacity(0.6),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
-                            ),
+                            style: AppTextStyles.customText(color: AppColors.white.withOpacity(0.6), fontWeight: FontWeight.w500, fontSize: 14.sp),
                           ),
                         ),
                       ],
@@ -210,10 +175,7 @@ class _CarCarouselWidgetState extends State<CarCarouselWidget> {
                         decoration: BoxDecoration(
                           color: AppColors.white.withOpacity(0.4),
                           border: Border.all(color: AppColors.white.withOpacity(0.5)),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10.sp),
-                            topRight: Radius.circular(10.sp),
-                          ),
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(10.sp), topRight: Radius.circular(10.sp)),
                         ),
                         clipBehavior: Clip.hardEdge,
                         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 12.w),

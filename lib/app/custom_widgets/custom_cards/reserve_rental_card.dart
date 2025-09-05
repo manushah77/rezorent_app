@@ -105,7 +105,29 @@ class ReserveRentalCard extends StatelessWidget {
             Divider(color: AppColors.borderColor).paddingHorizontal(12.w),
 
             /// Action Button
-            AppCustomButton(borderRadius: 8.sp, title: buttonText, onPressed: onReserveNow).paddingVertical(10.h).paddingHorizontal(12.w),
+            isForHotel
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "\$450",
+                            style: AppTextStyles.customText16(color: AppColors.textDarkColor, fontWeight: FontWeight.bold),
+                          ),
+                          Text("Starting Price", style: AppTextStyles.customText12(color: AppColors.textDarkColor)),
+                        ],
+                      ).paddingLeft(10.w),
+                      AppCustomButton(
+                        borderRadius: 8.sp,
+                        title: buttonText,
+                        onPressed: onReserveNow,
+                        width: 100.w,
+                      ).paddingVertical(10.h).paddingHorizontal(12.w),
+                    ],
+                  )
+                : AppCustomButton(borderRadius: 8.sp, title: buttonText, onPressed: onReserveNow).paddingVertical(10.h).paddingHorizontal(12.w),
           ],
         ),
       ),
