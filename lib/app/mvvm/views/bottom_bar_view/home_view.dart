@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:rezorent_app/app/config/app_assets.dart';
 import 'package:rezorent_app/app/config/app_colors.dart';
+import 'package:rezorent_app/app/config/app_routes.dart';
 import 'package:rezorent_app/app/config/app_text_style.dart';
 import 'package:rezorent_app/app/config/padding_extensions.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_cache_image/custom_cached_image.dart';
@@ -80,7 +81,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                         ),
                       ],
                     ),
-                    SvgPicture.asset(AppAssets.notificationIcon),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.notificationView);
+                      },
+                      child: SvgPicture.asset(AppAssets.notificationIcon),
+                    ),
                   ],
                 ).paddingHorizontal(12.w).paddingTop(50.h).paddingBottom(40.h),
               ).paddingHorizontal(10.w),

@@ -10,6 +10,7 @@ import 'package:rezorent_app/app/config/utils.dart';
 import 'package:rezorent_app/app/custom_widgets/app_custom_button.dart';
 import 'package:rezorent_app/app/custom_widgets/app_custom_field.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_pickers/date_picker_dialog.dart';
+import 'package:rezorent_app/app/custom_widgets/custom_sheets/hotel_filter_sheet.dart';
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
 import 'package:rezorent_app/app/mvvm/view_model/home_controller/home_controller.dart';
 
@@ -48,15 +49,18 @@ class _HotelsTabState extends State<HotelsTab> {
                 ),
               ),
               7.w.width,
-              Container(
-                height: 50.sp,
-                width: 50.sp,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Color(0xffD9D9D9)),
-                  color: Colors.transparent,
+              GestureDetector(
+                onTap: () => Utils.showBottomSheet(context: context, child: HotelFilterSheet()),
+                child: Container(
+                  height: 50.sp,
+                  width: 50.sp,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Color(0xffD9D9D9)),
+                    color: Colors.transparent,
+                  ),
+                  child: Center(child: SvgPicture.asset(AppAssets.filterIcon)),
                 ),
-                child: Center(child: SvgPicture.asset(AppAssets.filterIcon)),
               ),
             ],
           ),
