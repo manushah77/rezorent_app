@@ -33,8 +33,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.bgColor,
-      // backgroundColor: Colors.white,
+      // backgroundColor: AppColors.bgColor,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Stack(

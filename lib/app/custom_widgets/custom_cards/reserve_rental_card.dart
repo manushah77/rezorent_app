@@ -19,9 +19,10 @@ class ReserveRentalCard extends StatelessWidget {
   final String buttonText;
   final VoidCallback onReserveNow;
   final VoidCallback onPressed;
+  final bool isForHotel;
 
   const ReserveRentalCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.location,
     required this.imageUrl,
@@ -29,7 +30,8 @@ class ReserveRentalCard extends StatelessWidget {
     required this.buttonText,
     required this.onReserveNow,
     required this.onPressed,
-  }) : super(key: key);
+    required this.isForHotel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +43,19 @@ class ReserveRentalCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(12.sp),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1), // very light shadow
+              blurRadius: 10,
+              spreadRadius: 1,
+              offset: Offset(0, 0), // shadow on all sides
+            ),
+          ],
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CustomCachedImage(
-              height: 200.h,
-              width: 1.sw,
-              imageUrl: imageUrl,
-              borderRadius: 0,
-            ),
+            CustomCachedImage(height: 200.h, width: 1.sw, imageUrl: imageUrl, borderRadius: 0),
 
             Row(
               children: [
@@ -61,33 +66,20 @@ class ReserveRentalCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: AppTextStyles.customText(
-                          color: AppColors.darkTextColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20.sp,
-                        ),
+                        style: AppTextStyles.customText(color: AppColors.darkTextColor, fontWeight: FontWeight.w700, fontSize: 20.sp),
                       ),
 
                       /// Location
                       Row(
                         children: [
-                          SvgPicture.asset(
-                            AppAssets.locationIcon,
-                            color: AppColors.darkTextColor,
-                            height: 20.sp,
-                            width: 20.sp,
-                          ),
+                          SvgPicture.asset(AppAssets.locationIcon, color: AppColors.darkTextColor, height: 20.sp, width: 20.sp),
                           9.w.width,
                           Expanded(
                             child: Text(
                               location,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: AppTextStyles.customText(
-                                color: AppColors.darkTextColor,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 14.sp,
-                              ),
+                              style: AppTextStyles.customText(color: AppColors.darkTextColor, fontWeight: FontWeight.w500, fontSize: 14.sp),
                             ),
                           ),
                         ],
@@ -104,12 +96,7 @@ class ReserveRentalCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.sp),
                     border: Border.all(color: AppColors.borderColor),
                   ),
-                  child: CustomCachedImage(
-                    height: 52.sp,
-                    width: 58.sp,
-                    imageUrl: logoUrl,
-                    borderRadius: 8,
-                  ),
+                  child: CustomCachedImage(height: 52.sp, width: 58.sp, imageUrl: logoUrl, borderRadius: 8),
                 ),
               ],
             ).paddingVertical(10.h).paddingHorizontal(12.w),
@@ -118,11 +105,7 @@ class ReserveRentalCard extends StatelessWidget {
             Divider(color: AppColors.borderColor).paddingHorizontal(12.w),
 
             /// Action Button
-            AppCustomButton(
-              borderRadius: 8.sp,
-              title: buttonText,
-              onPressed: onReserveNow,
-            ).paddingVertical(10.h).paddingHorizontal(12.w),
+            AppCustomButton(borderRadius: 8.sp, title: buttonText, onPressed: onReserveNow).paddingVertical(10.h).paddingHorizontal(12.w),
           ],
         ),
       ),

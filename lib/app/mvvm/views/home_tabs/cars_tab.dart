@@ -89,6 +89,7 @@ class _CarsTabState extends State<CarsTab> {
             physics: BouncingScrollPhysics(),
             itemBuilder: (context, index) {
               return ReserveRentalCard(
+                isForHotel: false,
                 title: "Hyundai I30",
                 location: "Lagjia Partizani, Rruga Sheza.",
                 imageUrl: "https://cdn.cars24.com/prod/new-car-cms/Maruti-Suzuki/New-Dzire/2024/11/12/f2f7185b-e5a2-45a4-ba32-2b9a066feeee-Car-dynamic-shot-680x601-_1_.jpg",
