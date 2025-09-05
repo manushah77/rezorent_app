@@ -20,6 +20,8 @@ class ReserveRentalCard extends StatelessWidget {
   final VoidCallback onReserveNow;
   final VoidCallback onPressed;
   final bool isForHotel;
+  final bool isForOtherCars;
+  final String? price;
 
   const ReserveRentalCard({
     super.key,
@@ -31,6 +33,8 @@ class ReserveRentalCard extends StatelessWidget {
     required this.onReserveNow,
     required this.onPressed,
     required this.isForHotel,
+     this.isForOtherCars = false,
+     this.price,
   });
 
   @override
@@ -126,8 +130,24 @@ class ReserveRentalCard extends StatelessWidget {
                         width: 100.w,
                       ).paddingVertical(10.h).paddingHorizontal(12.w),
                     ],
-                  )
-                : AppCustomButton(borderRadius: 8.sp, title: buttonText, onPressed: onReserveNow).paddingVertical(10.h).paddingHorizontal(12.w),
+                  ) : isForOtherCars ? Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Text(
+                    price ?? "",
+                    style: AppTextStyles.customText20(color: AppColors.textDarkColor, fontWeight: FontWeight.w600),
+                  ).paddingLeft(10.w),
+                ),
+                AppCustomButton(
+                  borderRadius: 8.sp,
+                  title: buttonText,
+                  onPressed: onReserveNow,
+                  width: 100.w,
+                ).paddingHorizontal(12.w),
+              ],
+            ).paddingBottom(10.h) :
+                 AppCustomButton(borderRadius: 8.sp, title: buttonText, onPressed: onReserveNow).paddingVertical(10.h).paddingHorizontal(12.w),
           ],
         ),
       ),

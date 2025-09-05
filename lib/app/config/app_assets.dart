@@ -52,5 +52,13 @@ class AppAssets {
   static const String incrementIcon = '$svgsPath/increment_icon.svg';
   static const String seeAllIcon = '$svgsPath/see_all_icon.svg';
   static const String checkIcon = '$svgsPath/check_icon.svg';
+  static const String petrolIcon = '$svgsPath/petrol_icon.svg';
+  static const String roofRackIcon = '$svgsPath/roof_rack_icon.svg';
+  static const String seatsIcon = '$svgsPath/seats_icon.svg';
+  static const String temperatureIcon = '$svgsPath/temperature_icon.svg';
+  static const String manualIcon = '$svgsPath/manual_icon.svg';
+  static const String airBagsIcon = '$svgsPath/air_bags_icon.svg';
+
+
 
 }

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/login_controller.dart';
 import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/sign_up_controller.dart';
+import 'package:rezorent_app/app/mvvm/view_model/booking_details/booking_details_controller.dart';
 import 'package:rezorent_app/app/mvvm/view_model/bottom_bar_controller/bottom_bar_controller.dart';
 import 'package:rezorent_app/app/mvvm/view_model/home_controller/home_controller.dart';
 import 'package:rezorent_app/app/mvvm/views/bottom_bar_view/bottom_bar_view.dart';
@@ -16,9 +17,11 @@ import 'package:rezorent_app/app/mvvm/views/splash_views/splash_view.dart';
 
 import '../mvvm/view_model/car_rental_details/car_rental_details_controller.dart';
 import '../mvvm/views/about_us_view/about_us_view.dart';
+import '../mvvm/views/booking_details/booking_details_view.dart';
 import '../mvvm/views/car_rental_details/car_rental_details_view.dart';
 import '../mvvm/views/get_started_view/get_started_vew.dart';
 import '../mvvm/views/privacy_policy_view/privacy_policy_view.dart';
+import '../mvvm/views/select_car/select_car_view.dart';
 import '../mvvm/views/terms_and_condition_view/terms_and_condition_view.dart';
 
 /// Defines navigation routes for the LayerX app.
@@ -39,6 +42,8 @@ abstract class AppRoutes {
   static const notificationView = '/notificationView';
   static const carRentalDetailsView = '/carRentalDetailsView';
   static const hotelDetailsView = '/hotelDetailsView';
+  static const selectCarView = '/selectCarView';
+  static const bookingDetailsView = '/bookingDetailsView';
 }
 
 abstract class AppPages {
@@ -145,6 +150,20 @@ abstract class AppPages {
       page: () => HotelDetailsView(),
       binding: BindingsBuilder(() {
         // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.selectCarView,
+      page: () => SelectCarView(),
+      binding: BindingsBuilder(() {
+        // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.bookingDetailsView,
+      page: () => BookingDetailsView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<BookingDetailsController>(() => BookingDetailsController());
       }),
     ),
   ];

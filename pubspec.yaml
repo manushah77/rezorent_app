@@ -87,6 +87,7 @@ dependencies:
   geolocator: ^14.0.2
   geocoding: ^4.0.0
   flutter_swipe_button: ^2.1.1+1
+  table_calendar: ^3.2.0
 
 
 dev_dependencies:
