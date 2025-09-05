@@ -50,5 +50,6 @@ class AppAssets {
   static const String travelersIcon = '$svgsPath/travelers_icon.svg';
   static const String decrementIcon = '$svgsPath/decrement_icon.svg';
   static const String incrementIcon = '$svgsPath/increment_icon.svg';
+  static const String seeAllIcon = '$svgsPath/see_all_icon.svg';
 
 }
