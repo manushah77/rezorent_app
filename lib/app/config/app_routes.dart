@@ -4,6 +4,7 @@ import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/login_controll
 import 'package:rezorent_app/app/mvvm/view_model/auth_controllers/sign_up_controller.dart';
 import 'package:rezorent_app/app/mvvm/view_model/bottom_bar_controller/bottom_bar_controller.dart';
 import 'package:rezorent_app/app/mvvm/view_model/home_controller/home_controller.dart';
+import 'package:rezorent_app/app/mvvm/view_model/payment_controller/payment_controller.dart';
 import 'package:rezorent_app/app/mvvm/views/bottom_bar_view/bottom_bar_view.dart';
 import 'package:rezorent_app/app/mvvm/views/delete_account_view/delete_account_view.dart';
 import 'package:rezorent_app/app/mvvm/views/edit_profile_view/edit_profile_view.dart';
@@ -11,6 +12,9 @@ import 'package:rezorent_app/app/mvvm/views/forgot_pass_view/forgot_pass_view.da
 import 'package:rezorent_app/app/mvvm/views/hotel_details_view/hotel_details_view.dart';
 import 'package:rezorent_app/app/mvvm/views/login_view/login_view.dart';
 import 'package:rezorent_app/app/mvvm/views/notification_view/notification_view.dart';
+import 'package:rezorent_app/app/mvvm/views/payment_view/payment_view.dart';
+import 'package:rezorent_app/app/mvvm/views/room_details_view/room_details_view.dart';
+import 'package:rezorent_app/app/mvvm/views/select_room_view/select_room_view.dart';
 import 'package:rezorent_app/app/mvvm/views/sign_up_view/sign_up_view.dart';
 import 'package:rezorent_app/app/mvvm/views/splash_views/splash_view.dart';
 
@@ -39,6 +43,9 @@ abstract class AppRoutes {
   static const notificationView = '/notificationView';
   static const carRentalDetailsView = '/carRentalDetailsView';
   static const hotelDetailsView = '/hotelDetailsView';
+  static const selectRoomView = '/selectRoomView';
+  static const roomDetailsView = '/roomDetailsView';
+  static const paymentView = '/paymentView';
 }
 
 abstract class AppPages {
@@ -145,6 +152,27 @@ abstract class AppPages {
       page: () => HotelDetailsView(),
       binding: BindingsBuilder(() {
         // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.selectRoomView,
+      page: () => SelectRoomView(),
+      binding: BindingsBuilder(() {
+        // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.roomDetailsView,
+      page: () => RoomDetailsView(),
+      binding: BindingsBuilder(() {
+        // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.paymentView,
+      page: () => PaymentView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<PaymentController>(() => PaymentController());
       }),
     ),
   ];

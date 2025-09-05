@@ -116,7 +116,7 @@ class ReserveRentalCard extends StatelessWidget {
                             "\$450",
                             style: AppTextStyles.customText16(color: AppColors.textDarkColor, fontWeight: FontWeight.bold),
                           ),
-                          Text("Starting Price", style: AppTextStyles.customText12(color: AppColors.textDarkColor)),
+                          Text("Per night before taxes and fees", style: AppTextStyles.customText12(color: AppColors.textDarkColor)),
                         ],
                       ).paddingLeft(10.w),
                       AppCustomButton(

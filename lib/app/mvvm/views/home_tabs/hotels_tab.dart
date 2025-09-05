@@ -206,7 +206,7 @@ class _HotelsTabState extends State<HotelsTab> {
                   Get.toNamed(AppRoutes.hotelDetailsView);
                 },
                 onReserveNow: () {
-                  // Handle reserve logic
+                  Get.toNamed(AppRoutes.paymentView);
                 },
               );
             },
