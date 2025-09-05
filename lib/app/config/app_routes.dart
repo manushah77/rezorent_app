@@ -16,12 +16,16 @@ import 'package:rezorent_app/app/mvvm/views/sign_up_view/sign_up_view.dart';
 import 'package:rezorent_app/app/mvvm/views/splash_views/splash_view.dart';
 
 import '../mvvm/view_model/car_rental_details/car_rental_details_controller.dart';
+import '../mvvm/view_model/payment_controller/payment_controller.dart';
 import '../mvvm/views/about_us_view/about_us_view.dart';
 import '../mvvm/views/booking_details/booking_details_view.dart';
 import '../mvvm/views/car_rental_details/car_rental_details_view.dart';
 import '../mvvm/views/get_started_view/get_started_vew.dart';
+import '../mvvm/views/payment_view/payment_view.dart';
 import '../mvvm/views/privacy_policy_view/privacy_policy_view.dart';
+import '../mvvm/views/room_details_view/room_details_view.dart';
 import '../mvvm/views/select_car/select_car_view.dart';
+import '../mvvm/views/select_room_view/select_room_view.dart';
 import '../mvvm/views/terms_and_condition_view/terms_and_condition_view.dart';
 
 /// Defines navigation routes for the LayerX app.
@@ -44,6 +48,11 @@ abstract class AppRoutes {
   static const hotelDetailsView = '/hotelDetailsView';
   static const selectCarView = '/selectCarView';
   static const bookingDetailsView = '/bookingDetailsView';
+
+  static const selectRoomView = '/selectRoomView';
+  static const roomDetailsView = '/roomDetailsView';
+  static const paymentView = '/paymentView';
+
 }
 
 abstract class AppPages {
@@ -164,6 +173,29 @@ abstract class AppPages {
       page: () => BookingDetailsView(),
       binding: BindingsBuilder(() {
         Get.lazyPut<BookingDetailsController>(() => BookingDetailsController());
+      }),
+    ),
+
+
+    GetPage(
+      name: AppRoutes.selectRoomView,
+      page: () => SelectRoomView(),
+      binding: BindingsBuilder(() {
+        // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.roomDetailsView,
+      page: () => RoomDetailsView(),
+      binding: BindingsBuilder(() {
+        // Get.lazyPut<CarRentalDetailsController>(() => CarRentalDetailsController());
+      }),
+    ),
+    GetPage(
+      name: AppRoutes.paymentView,
+      page: () => PaymentView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<PaymentController>(() => PaymentController());
       }),
     ),
   ];

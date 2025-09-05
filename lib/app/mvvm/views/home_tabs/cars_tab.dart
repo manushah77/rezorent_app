@@ -7,6 +7,7 @@ import 'package:rezorent_app/app/config/padding_extensions.dart';
 import 'package:rezorent_app/app/custom_widgets/app_custom_button.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_cache_image/custom_cached_image.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_cards/reserve_rental_card.dart';
+import 'package:rezorent_app/app/custom_widgets/custom_sheets/car_filter_sheet.dart';
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
 
 import '../../../config/app_assets.dart';
@@ -48,15 +49,19 @@ class _CarsTabState extends State<CarsTab> {
               ),
             ),
             7.w.width,
-            Container(
-              height: 50.sp,
-              width: 50.sp,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Color(0xffD9D9D9)),
-                color: Colors.transparent,
+            GestureDetector(
+              onTap: () => Utils.showBottomSheet(context: context, child: CarFilterSheet()),
+
+              child: Container(
+                height: 50.sp,
+                width: 50.sp,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Color(0xffD9D9D9)),
+                  color: Colors.transparent,
+                ),
+                child: Center(child: SvgPicture.asset(AppAssets.filterIcon)),
               ),
-              child: Center(child: SvgPicture.asset(AppAssets.filterIcon)),
             ),
           ],
         ),

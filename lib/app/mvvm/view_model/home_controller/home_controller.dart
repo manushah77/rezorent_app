@@ -20,4 +20,24 @@ class HomeController extends GetxController {
   RxBool twinRoomValue = false.obs;
   RxBool quadRoomValue = false.obs;
   RxBool familyRoomValue = false.obs;
+
+  RxList<String> transmissionModes = <String>[
+    'Automatic',
+    'Manual',
+    'Hybrid',
+  ].obs;
+
+  RxList<String> selectedTransmissionModes = <String>[].obs;
+
+  // fuel modes
+  RxList<String> fuelModes = <String>[
+    'Petrol',
+    'Diesel',
+    'Hybrid',
+    'Electric',
+  ].obs;
+
+  RxList<String> selectedFuelModes = <String>[].obs;
+
+
 }

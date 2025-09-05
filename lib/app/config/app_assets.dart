@@ -23,7 +23,10 @@ class AppAssets {
   static const String termsIcon = '$imagesPath/ic_terms_condition.png';
   static const String deleteAccountIcon = '$imagesPath/delete_account_icon.png';
   static const String icPaymentCanceled = '$imagesPath/payment_canceled.png';
-
+  static const String securePaymentIcon = '$imagesPath/secure_payment_icon.png';
+  static const String creditCardIcon = '$imagesPath/credit_card.png';
+  static const String cashAtArrivalIcon = '$imagesPath/cash_at_arrival.png';
+  static const String checkIconPng = '$imagesPath/check_icon.png';
   // Svgs Path
   static const String backButton = '$svgsPath/back_btn.svg';
   static const String whiteBackButton = '$svgsPath/white_back_button.svg';
@@ -59,6 +62,12 @@ class AppAssets {
   static const String manualIcon = '$svgsPath/manual_icon.svg';
   static const String airBagsIcon = '$svgsPath/air_bags_icon.svg';
 
-
-
+  static const String wifiIcon = '$svgsPath/wifi_icon.svg';
+  static const String airportIcon = '$svgsPath/airport_icon.svg';
+  static const String taxiIcon = '$svgsPath/taxi_icon.svg';
+  static const String foodIcon = '$svgsPath/food_icon.svg';
+  static const String parkingIcon = '$svgsPath/parking_icon.svg';
+  static const String fitnessIcon = '$svgsPath/fitness_icon.svg';
+  static const String breakfastIcon = '$svgsPath/breakfast_icon.svg';
+  static const String barIcon = '$svgsPath/bar_icon.svg';
 }
