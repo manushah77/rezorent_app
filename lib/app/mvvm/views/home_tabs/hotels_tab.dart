@@ -1,3 +1,4 @@
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,6 +11,8 @@ import 'package:rezorent_app/app/custom_widgets/app_custom_field.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_pickers/date_picker_dialog.dart';
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
 import 'package:rezorent_app/app/mvvm/view_model/home_controller/home_controller.dart';
+
+import '../../../config/app_text_style.dart';
 
 class HotelsTab extends StatefulWidget {
   const HotelsTab({super.key});
@@ -64,7 +67,7 @@ class _HotelsTabState extends State<HotelsTab> {
             enabledBorderColor: Color(0xffD9D9D9),
             focusedBorder: 8.sp,
             focusedBorderColor: AppColors.primary,
-            textInputAction: TextInputAction.search,
+            textInputAction: TextInputAction.done,
             prefixIcon: SvgPicture.asset(AppAssets.locationIcon, color: Colors.black).paddingFromAll(12.sp),
             hintText: 'Where to go?',
             hintColor: AppColors.black,
@@ -119,8 +122,96 @@ class _HotelsTabState extends State<HotelsTab> {
               ),
             ],
           ),
+          10.h.height,
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Color(0xffD9D9D9)),
+              borderRadius: BorderRadius.circular(8.sp),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SvgPicture.asset(AppAssets.travelersIcon),
+                    3.w.width,
+                    Text(
+                      'Travelers',
+                      style: AppTextStyles.customText16(color: Colors.black, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                10.h.height,
+                _buildTravelersTile(value: controller.adultsCount, title: "Adult", subtitle: "12 years and above"),
+                10.h.height,
+                DottedLine(dashColor: AppColors.textLightBlack.withOpacity(0.6)),
+                10.h.height,
+                _buildTravelersTile(value: controller.childrenCount, title: "Children", subtitle: "2 - 11 years old"),
+                10.h.height,
+                DottedLine(dashColor: AppColors.textLightBlack.withOpacity(0.6)),
+                10.h.height,
+                _buildTravelersTile(
+                  value: controller.infantCount,
+                  title: "Infant",
+                  subtitle: "Below 2 years old P500 fare / infant to be paid at the terminal",
+                ),
+              ],
+            ).paddingFromAll(8.sp),
+          ),
         ],
       ).paddingHorizontal(15.w),
     );
+  }
+
+  Widget _buildTravelersTile({required RxInt value, required String title, required String subtitle}) {
+    return Obx(() {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: AppTextStyles.customText16(color: Colors.black, fontWeight: FontWeight.w600),
+              ),
+              SizedBox(
+                width: 200.w,
+                child: Text(subtitle, style: AppTextStyles.customText12(color: AppColors.textLightBlack)),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  if (value > 0) {
+                    value.value--;
+                  }
+                },
+                child: SvgPicture.asset(AppAssets.decrementIcon),
+              ),
+              5.w.width,
+              SizedBox(
+                width: 20.w,
+                child: Text(
+                  value.toString(),
+                  style: AppTextStyles.customText18(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              5.w.width,
+              GestureDetector(
+                onTap: () {
+                  value.value++;
+                },
+                child: SvgPicture.asset(AppAssets.incrementIcon),
+              ),
+            ],
+          ),
+        ],
+      );
+    });
   }
 }

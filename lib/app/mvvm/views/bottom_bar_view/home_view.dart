@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:rezorent_app/app/config/app_assets.dart';
 import 'package:rezorent_app/app/config/app_colors.dart';
 import 'package:rezorent_app/app/config/app_text_style.dart';
@@ -139,4 +140,5 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       ),
     );
   }
+
 }

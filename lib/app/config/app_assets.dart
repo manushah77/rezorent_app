@@ -47,5 +47,8 @@ class AppAssets {
   static const String icNotification = '$svgsPath/ic_notification.svg';
   static const String fromDateIcon = '$svgsPath/from_date_icon.svg';
   static const String toDateIcon = '$svgsPath/to_date_icon.svg';
+  static const String travelersIcon = '$svgsPath/travelers_icon.svg';
+  static const String decrementIcon = '$svgsPath/decrement_icon.svg';
+  static const String incrementIcon = '$svgsPath/increment_icon.svg';
 
 }
