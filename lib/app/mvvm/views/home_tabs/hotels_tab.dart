@@ -7,6 +7,7 @@ import 'package:rezorent_app/app/config/app_assets.dart';
 import 'package:rezorent_app/app/config/app_colors.dart';
 import 'package:rezorent_app/app/config/padding_extensions.dart';
 import 'package:rezorent_app/app/config/utils.dart';
+import 'package:rezorent_app/app/custom_widgets/app_custom_button.dart';
 import 'package:rezorent_app/app/custom_widgets/app_custom_field.dart';
 import 'package:rezorent_app/app/custom_widgets/custom_pickers/date_picker_dialog.dart';
 import 'package:rezorent_app/app/custom_widgets/sizedbox_extension.dart';
@@ -157,6 +158,29 @@ class _HotelsTabState extends State<HotelsTab> {
                 ),
               ],
             ).paddingFromAll(8.sp),
+          ),
+          15.h.height,
+          AppCustomButton(title: "Search", onPressed: () {}).paddingHorizontal(15.w),
+          15.h.height,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Our Hotels',
+                style: AppTextStyles.customText24(color: Color(0xff0C1D24), fontWeight: FontWeight.w600),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'See All',
+                    style: AppTextStyles.customText12(color: AppColors.textDarkColor, fontWeight: FontWeight.w500),
+                  ),
+                  4.w.width,
+                  SvgPicture.asset(AppAssets.seeAllIcon),
+                ],
+              ),
+            ],
           ),
         ],
       ).paddingHorizontal(15.w),
